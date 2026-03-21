@@ -160,7 +160,7 @@ struct HostTime : TerminalModule {
                               : 0.0f;
         const float barPhase = playingWithBBT && pcontext->beatsPerBar > 0
                                 ? fmod(
-                                    (timeInfo.bar - 1) + (timeInfo.beat - 1) / (float)pcontext->beatsPerBar + beatPhase / (float)pcontext->beatsPerBar,
+                                    (timeInfo.bar - 1) + ((timeInfo.beat - 1) + beatPhase) / (float)pcontext->beatsPerBar,
                                     (float)barDivision
                                   ) / (float)barDivision
                                 : 0.0f;
